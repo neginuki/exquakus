@@ -1,5 +1,8 @@
 package world.sake.exquakus.user;
 
+import javax.annotation.PostConstruct;
+import javax.enterprise.context.ApplicationScoped;
+import javax.ws.rs.POST;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -7,12 +10,13 @@ import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.LongStream;
 
+@ApplicationScoped
 public class UserRepository {
 
-    public static Map<Long, UserResource> users = new HashMap<>();
+    private final Map<Long, UserResource> users = new HashMap<>();
 
     public List<UserResource> findAll() {
-        return users.values().stream().collect(Collectors.toCollection(ArrayList::new));
+        return new ArrayList<>(users.values());
     }
 
     public UserResource findById(long id) {
@@ -28,7 +32,8 @@ public class UserRepository {
         return findById(newId);
     }
 
-    public static UserRepository testsetup() {
+    @PostConstruct
+    public void testsetup() {
         LongStream.rangeClosed(1, 10).forEach(index -> {
             UserResource user = new UserResource();
             user.id = index;
@@ -37,7 +42,5 @@ public class UserRepository {
 
             users.put(user.id, user);
         });
-
-        return new UserRepository();
     }
 }

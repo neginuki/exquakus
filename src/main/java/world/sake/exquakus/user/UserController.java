@@ -2,6 +2,7 @@ package world.sake.exquakus.user;
 
 import java.util.List;
 
+import javax.inject.Inject;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
@@ -13,7 +14,8 @@ import org.jboss.resteasy.annotations.jaxrs.PathParam;
 @Path("/users")
 public class UserController {
 
-    private UserRepository repository = UserRepository.testsetup();
+    @Inject
+    private UserRepository repository;
 
     @GET
     @Path("/{id}")
