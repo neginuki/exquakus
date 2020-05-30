@@ -1,7 +1,10 @@
 package world.sake.exquakus.config;
 
+import javax.inject.Inject;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
 
 import org.eclipse.microprofile.config.Config;
 import org.eclipse.microprofile.config.ConfigProvider;
@@ -20,6 +23,9 @@ public class ConfigController {
 
     @ConfigProperty(name = "undefined", defaultValue = "未定義のパラメータ名")
     private String undefined;
+
+    @Inject
+    private RemoteConfig remoteConfig;
 
     // e.g. http://localhost:8081/configs/module.alias
     @GET
@@ -50,5 +56,12 @@ public class ConfigController {
     @Path("/undefined")
     public String undefined() {
         return undefined;
+    }
+
+    @GET
+    @Path("/remote")
+    @Produces(MediaType.APPLICATION_JSON)
+    public RemoteConfig remote() {
+        return remoteConfig;
     }
 }
