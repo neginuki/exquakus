@@ -119,6 +119,7 @@
 					</connections>
 					<name>日本酒・焼酎共通</name>
 					<selected>true</selected>
+					<category_contents>table.CLS_MOTO</category_contents>
 				</category>
 				<category>
 					<height>1544</height>
@@ -136,6 +137,7 @@
 					</connections>
 					<name>日本酒専用</name>
 					<selected>true</selected>
+					<category_contents>table.CLS_NIHONSHU_HIIRE</category_contents>
 				</category>
 				<category>
 					<height>1533</height>

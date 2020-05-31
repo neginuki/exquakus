@@ -30,3 +30,5 @@ nb-configuration.xml
 # Gradle
 .gradle/
 build/
+/.apt_generated/
+/.apt_generated_tests/

@@ -1,7 +1,10 @@
 plugins {
     id 'java'
     id 'io.quarkus'
+    id 'org.seasar.doma.compile' version '1.0.0'
 }
+
+def domaVersion = '2.29.0'
 
 repositories {
      mavenLocal()
@@ -9,14 +12,22 @@ repositories {
 }
 
 dependencies {
+    implementation 'io.quarkus:quarkus-agroal'
+    
     implementation 'io.quarkus:quarkus-jdbc-mysql'
+    runtimeOnly 'mysql:mysql-connector-java:8.0.18'   
+    
     implementation 'io.quarkus:quarkus-resteasy-jsonb'
     implementation 'io.quarkus:quarkus-rest-client'
     implementation enforcedPlatform("${quarkusPlatformGroupId}:${quarkusPlatformArtifactId}:${quarkusPlatformVersion}")
     implementation 'io.quarkus:quarkus-resteasy'
+    
+    implementation "org.seasar.doma:doma:$domaVersion"
+    annotationProcessor "org.seasar.doma:doma:$domaVersion"
+    
 
     testImplementation 'io.quarkus:quarkus-junit5'
-    testImplementation 'io.rest-assured:rest-assured'
+    testImplementation 'io.rest-assured:rest-assured'   
 }
 
 group 'world.sake'
