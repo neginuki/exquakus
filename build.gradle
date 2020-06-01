@@ -25,6 +25,8 @@ dependencies {
     implementation "org.seasar.doma:doma:$domaVersion"
     annotationProcessor "org.seasar.doma:doma:$domaVersion"
     
+    // microprofile-healthcheck
+    implementation 'io.quarkus:quarkus-smallrye-health:1.5.0.Final'    
 
     testImplementation 'io.quarkus:quarkus-junit5'
     testImplementation 'io.rest-assured:rest-assured'   
