@@ -1,13 +1,13 @@
-‰½‚ÅDBŠÇ—‚µ‚æ‚¤‚©”Y‚İ’†
+ä½•ã§DBç®¡ç†ã—ã‚ˆã†ã‹æ‚©ã¿ä¸­
 
-ˆê’Uè“®‚Å–{‘Ì‚ğì‚é
+ä¸€æ—¦æ‰‹å‹•ã§æœ¬ä½“ã‚’ä½œã‚‹
 
 create database sakedb;
 
-workbench ‚©‚ç File > Run SQL Script ‚Å replace-schema.sql ‚ğ‘I‘ğ
-Edefault schema ‚É sakedb
-Edefault character set ‚É utf8mb4 ‚Å run
-i‚±‚Ìİ’è‚Í‘¼SQL‚Å‚à“¯‚¶j
+workbench ã‹ã‚‰ File > Run SQL Script ã§ replace-schema.sql ã‚’é¸æŠ
+ãƒ»default schema ã« sakedb
+ãƒ»default character set ã« utf8mb4 ã§ run
+ï¼ˆã“ã®è¨­å®šã¯ä»–SQLã§ã‚‚åŒã˜ï¼‰
 
-‘±‚¢‚Äƒf[ƒ^‚ğ“Š“ü‚·‚éB
-“¯—l‚É initialize ˆÈ‰º‚Ìƒtƒ@ƒCƒ‹‚ğã‚©‚ç‡‚ÉÀs‚µ‚Ä‚¢‚­B
+ç¶šã„ã¦ãƒ‡ãƒ¼ã‚¿ã‚’æŠ•å…¥ã™ã‚‹ã€‚
+åŒæ§˜ã« initialize ä»¥ä¸‹ã®ãƒ•ã‚¡ã‚¤ãƒ«ã‚’ä¸Šã‹ã‚‰é †ã«å®Ÿè¡Œã—ã¦ã„ãã€‚
