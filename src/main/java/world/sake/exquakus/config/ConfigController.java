@@ -27,7 +27,7 @@ public class ConfigController {
     @Inject
     private RemoteConfig remoteConfig;
 
-    // e.g. http://localhost:8081/configs/module.alias
+    // e.g. http://localhost:8080/configs/module.alias
     @GET
     @Path("/{name}")
     public String get(@PathParam String name) {
@@ -37,21 +37,21 @@ public class ConfigController {
         return value;
     }
 
-    // e.g. http://localhost:8081/configs/name
+    // e.g. http://localhost:8080/configs/name
     @GET
     @Path("/name")
     public String name() {
         return moduleName;
     }
 
-    // e.g. http://localhost:8081/configs/alias
+    // e.g. http://localhost:8080/configs/alias
     @GET
     @Path("/alias")
     public String alias() {
         return moduleAlias;
     }
 
-    // e.g. http://localhost:8081/configs/undefined
+    // e.g. http://localhost:8080/configs/undefined
     @GET
     @Path("/undefined")
     public String undefined() {

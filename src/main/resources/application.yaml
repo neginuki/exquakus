@@ -1,0 +1,44 @@
+quarkus:
+  http:
+    port: 8080
+    cors: true
+  banner:
+    path: mybanner
+  datasource:
+    health:
+      enabled: false # quarkus-agroal がデフォルトで healthcheck を追加しちゃうので無効にする
+    db-kind: mysql
+    username: root
+    password:
+    jdbc:
+      url: jdbc:mysql://localhost:3306/sakedb?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=JST
+      min-size: 4
+      max-size: 16
+                    
+remote:
+  name: クラスで一括読み込み
+  s3:
+    url: http://localhost:7480
+    accesskey: akey
+    secretkey: skey
+  api:
+    timeout: 1000
+    log: remote.log
+
+# health check 用の拡張プロパティ (値はデフォルト)
+# see https://quarkus.io/guides/microprofile-health#configuration-reference
+#
+# 拡張機能で追加されてヘルスチェックを有効にするか？
+# quarkus.health.extensions.enabled = true
+
+# ヘルスチェックのルートパス
+# quarkus.smallrye-health.root-path = /health
+
+# live ポイントのパス
+# quarkus.smallrye-health.liveness-path = /live
+
+# ready ポイントへのパス
+# quarkus.smallrye-health.readiness-path = /ready
+
+# group ポイントのパス（これがなんだかわからない。唐突に出てきた）
+# quarkus.smallrye-health.group-path = /grup
