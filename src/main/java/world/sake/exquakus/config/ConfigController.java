@@ -58,6 +58,7 @@ public class ConfigController {
         return undefined;
     }
 
+    // e.g. http://localhost:8080/configs/remote
     @GET
     @Path("/remote")
     @Produces(MediaType.APPLICATION_JSON)
