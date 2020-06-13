@@ -43,7 +43,7 @@ Eclipse の market place から yaml エディタ入れて編集した（自動�
 
 で起動できるようになる
 
-### profile
+## profile
 
 yaml 上はこんな感じ
 
@@ -69,3 +69,21 @@ yaml 上はこんな感じ
 こんな感じにしたら staging が読み込まれた
 
 e.g. http://localhost:8080/configs/remote
+
+### profile の現在値の確認
+
+`ProfileManager.getActiveProfile()` でとるらしい。
+
+
+e.g. http://localhost:8080/profile
+
+
+gradlew quarkusDev で立ち上げると `dev`
+
+`gradlew quarkusBuild --uber-jar -Dquarkus.profile=staging`
+`java -jar build\exquakus-1.0.0-SNAPSHOT-runner.jar`
+
+で立ち上げると `staging`
+
+`set QUARKUS_PROFILE=product`
+してから `java -jar build\exquakus-1.0.0-SNAPSHOT-runner.jar` だと `product`
