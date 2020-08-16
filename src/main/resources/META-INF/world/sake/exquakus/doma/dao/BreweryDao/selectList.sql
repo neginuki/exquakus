@@ -1,1 +1,1 @@
-select /*%expand*/* from brewery
+select /*%expand*/* from brewery order by brewery_id desc
